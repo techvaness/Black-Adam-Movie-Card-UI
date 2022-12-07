@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins+Sans');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient( #D36B00, #000000 60%);
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    /* background: #fff; */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.card.poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.card .poster::before {
+    content: ' ';
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #D36B00 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .poster::before {
+    bottom: 0px;
+}
+
+.card .poster img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .poster img {
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.card .details {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 20px;
+    bottom: -165px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.card:hover .details {
+    bottom: 0px;
+}
+
+.card .details .logo {
+    max-width: 180px;
+}
+
+.card .details h3 {
+    font-size: 0.8em;
+    color: #F1EFDC;
+}
+
+.card .details .rating {
+    position: relative;
+    padding: 5px o;
+}
+
+.card .details .rating .fa-star {
+    color: #F1EFDC;
+    font-size: 1em;
+}
+
+.card .details .rating span {
+    color: #F1EFDC;
+    margin-left: 10px;
+}
+
+.card .details .tags {
+    position: relative;
+    margin-top: 5px;
+}
+
+.card .details .tags span {
+    padding: 2px 5px;
+    color: #F1EFDC;
+    background: #42032C;
+    border-radius: 4px;
+}
+
+.card .details .tags span:nth-child(2) {
+    background: #fa1414;
+}
+
+.card .details .info {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.card .details .cast {
+    position: relative;
+}
+
+.card .details .cast h4 {
+    color: #F1EFDC;
+    margin-top: 10px;
+}
+
+.card .details .cast ul {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.card .details .cast ul li {
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #F1EFDC;
+}
+
+.card .details .cast ul li img {
+    max-width: 100%;
+}
